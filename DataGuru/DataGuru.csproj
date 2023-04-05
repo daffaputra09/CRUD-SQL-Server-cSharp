@@ -61,6 +61,12 @@
     <Compile Include="TambahGuru.Designer.cs">
       <DependentUpon>TambahGuru.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateGuru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateGuru.Designer.cs">
+      <DependentUpon>UpdateGuru.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -75,6 +81,9 @@
     </Compile>
     <EmbeddedResource Include="TambahGuru.resx">
       <DependentUpon>TambahGuru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateGuru.resx">
+      <DependentUpon>UpdateGuru.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

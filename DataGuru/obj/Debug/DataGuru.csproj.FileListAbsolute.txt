@@ -10,3 +10,4 @@ D:\cs\DataGuru\DataGuru\obj\Debug\DataGuru.csproj.CoreCompileInputs.cache
 D:\cs\DataGuru\DataGuru\obj\Debug\DataGuru.exe
 D:\cs\DataGuru\DataGuru\obj\Debug\DataGuru.pdb
 D:\cs\DataGuru\DataGuru\obj\Debug\DataGuru.TambahGuru.resources
+D:\cs\DataGuru\DataGuru\obj\Debug\DataGuru.UpdateGuru.resources

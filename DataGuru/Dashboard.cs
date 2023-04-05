@@ -29,6 +29,29 @@ namespace DataGuru
                 SqlDataAdapter data = new SqlDataAdapter("SELECT * FROM tb_guru WHERE is_deleted='False';", conn);
                 DataTable table = new DataTable();
                 data.Fill(table);
+                dataview.RowTemplate.Height = 30;
+                dataview.AutoGenerateColumns = false;
+                dataview.DataSource = table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public void Refresh()
+        {
+            SqlConnection conn = a.GetConn();
+            try
+            {
+                conn.Open();
+                SqlDataAdapter data = new SqlDataAdapter("SELECT * FROM tb_guru WHERE is_deleted='False';", conn);
+                DataTable table = new DataTable();
+                data.Fill(table);
 
                 dataview.AutoGenerateColumns = false;
                 dataview.DataSource = table;
@@ -43,12 +66,30 @@ namespace DataGuru
             }
         }
 
+        private void DeleteOnView(string nip)
+        {
+           SqlConnection conn = a.GetConn();
+            string query = "UPDATE tb_guru SET is_deleted = 1  WHERE nip = @nip";
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@nip", nip);
+                cmd.ExecuteNonQuery();
+                Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            Refresh();
             Tampil();
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -59,8 +100,52 @@ namespace DataGuru
 
         private void dataview_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
+                if (dataview.Columns[e.ColumnIndex].Name == "delete")
+                {
+                    if (MessageBox.Show(string.Format("Apakah anda yakin ingin menghapus data?"), "Konfirmasi", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        string nip = dataview.Rows[e.RowIndex].Cells["nip"].Value.ToString();
 
+                        DeleteOnView(nip);
+
+                        MessageBox.Show("Data berhasil dihapus");
+                    }
+                }
+                if (dataview.Columns[e.ColumnIndex].Name == "Update")
+                {
+                    UpdateGuru newform = new UpdateGuru();
+                    newform.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
+        private void refresh_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = a.GetConn();
+            try
+            {
+                conn.Open();
+                SqlDataAdapter data = new SqlDataAdapter("SELECT * FROM tb_guru WHERE is_deleted='False';", conn);
+                DataTable table = new DataTable();
+                data.Fill(table);
+
+                dataview.AutoGenerateColumns = false;
+                dataview.DataSource = table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 }
