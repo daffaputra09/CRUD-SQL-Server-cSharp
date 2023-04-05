@@ -1,0 +1,12 @@
+D:\cs\DataGuru\DataGuru\bin\Debug\DataGuru.exe.config
+D:\cs\DataGuru\DataGuru\bin\Debug\DataGuru.exe
+D:\cs\DataGuru\DataGuru\bin\Debug\DataGuru.pdb
+D:\cs\DataGuru\DataGuru\obj\Debug\DataGuru.csproj.AssemblyReference.cache
+D:\cs\DataGuru\DataGuru\obj\Debug\DataGuru.csproj.SuggestedBindingRedirects.cache
+D:\cs\DataGuru\DataGuru\obj\Debug\DataGuru.Dashboard.resources
+D:\cs\DataGuru\DataGuru\obj\Debug\DataGuru.Properties.Resources.resources
+D:\cs\DataGuru\DataGuru\obj\Debug\DataGuru.csproj.GenerateResource.cache
+D:\cs\DataGuru\DataGuru\obj\Debug\DataGuru.csproj.CoreCompileInputs.cache
+D:\cs\DataGuru\DataGuru\obj\Debug\DataGuru.exe
+D:\cs\DataGuru\DataGuru\obj\Debug\DataGuru.pdb
+D:\cs\DataGuru\DataGuru\obj\Debug\DataGuru.TambahGuru.resources
