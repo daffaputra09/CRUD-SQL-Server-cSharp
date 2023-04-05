@@ -38,10 +38,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataview = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.refresh = new System.Windows.Forms.Button();
-            this.trash = new System.Windows.Forms.Button();
             this.nip = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nama = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jenis_kelamin = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +47,10 @@
             this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Update = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.refresh = new System.Windows.Forms.Button();
+            this.trash = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,51 +98,6 @@
             this.dataview.Size = new System.Drawing.Size(999, 264);
             this.dataview.TabIndex = 0;
             this.dataview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataview_CellContentClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 20);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 30);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Data Guru";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.button1.Location = new System.Drawing.Point(28, 76);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(77, 32);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Tambah";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // refresh
-            // 
-            this.refresh.Location = new System.Drawing.Point(154, 30);
-            this.refresh.Margin = new System.Windows.Forms.Padding(2);
-            this.refresh.Name = "refresh";
-            this.refresh.Size = new System.Drawing.Size(56, 19);
-            this.refresh.TabIndex = 3;
-            this.refresh.Text = "Refresh";
-            this.refresh.UseVisualStyleBackColor = true;
-            this.refresh.Click += new System.EventHandler(this.refresh_Click);
-            // 
-            // trash
-            // 
-            this.trash.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.trash.Location = new System.Drawing.Point(942, 381);
-            this.trash.Name = "trash";
-            this.trash.Size = new System.Drawing.Size(85, 33);
-            this.trash.TabIndex = 4;
-            this.trash.Text = "Trash";
-            this.trash.UseVisualStyleBackColor = true;
-            this.trash.Click += new System.EventHandler(this.trash_Click);
             // 
             // nip
             // 
@@ -256,6 +211,52 @@
             this.id.ReadOnly = true;
             this.id.Visible = false;
             this.id.Width = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(27, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 30);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Data Guru";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.button1.Location = new System.Drawing.Point(28, 76);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(77, 32);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Tambah";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // refresh
+            // 
+            this.refresh.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.refresh.Location = new System.Drawing.Point(109, 76);
+            this.refresh.Margin = new System.Windows.Forms.Padding(2);
+            this.refresh.Name = "refresh";
+            this.refresh.Size = new System.Drawing.Size(77, 32);
+            this.refresh.TabIndex = 3;
+            this.refresh.Text = "Refresh";
+            this.refresh.UseVisualStyleBackColor = true;
+            this.refresh.Click += new System.EventHandler(this.refresh_Click);
+            // 
+            // trash
+            // 
+            this.trash.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.trash.Location = new System.Drawing.Point(942, 381);
+            this.trash.Name = "trash";
+            this.trash.Size = new System.Drawing.Size(85, 33);
+            this.trash.TabIndex = 4;
+            this.trash.Text = "Trash";
+            this.trash.UseVisualStyleBackColor = true;
+            this.trash.Click += new System.EventHandler(this.trash_Click);
             // 
             // Dashboard
             // 
