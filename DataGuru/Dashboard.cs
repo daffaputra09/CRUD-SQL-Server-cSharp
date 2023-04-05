@@ -68,7 +68,7 @@ namespace DataGuru
 
         private void DeleteOnView(string nip)
         {
-           SqlConnection conn = a.GetConn();
+            SqlConnection conn = a.GetConn();
             string query = "UPDATE tb_guru SET is_deleted = 1  WHERE nip = @nip";
 
             try
@@ -98,6 +98,11 @@ namespace DataGuru
             newform.Show();
         }
 
+        public void PanggilData(DataGridViewCellEventArgs e)
+        {   
+            DataGridViewRow Row = this.dataview.Rows[e.RowIndex];
+
+        }
         private void dataview_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
