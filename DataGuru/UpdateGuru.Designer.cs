@@ -220,6 +220,7 @@
             this.Controls.Add(this.FormNip);
             this.Name = "UpdateGuru";
             this.Text = "UpdateGuru";
+            this.Load += new System.EventHandler(this.UpdateGuru_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

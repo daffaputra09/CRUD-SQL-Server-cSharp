@@ -12,9 +12,16 @@ namespace DataGuru
 {
     public partial class UpdateGuru : Form
     {
+        Koneksi a = new Koneksi();
+        
         public UpdateGuru()
         {
             InitializeComponent();
+        }
+
+        private void UpdateGuru_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }
