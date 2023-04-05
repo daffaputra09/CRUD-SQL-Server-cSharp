@@ -63,5 +63,10 @@ namespace DataGuru
             }
 
         }
+
+        private void FormNip_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

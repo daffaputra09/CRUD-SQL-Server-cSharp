@@ -30,7 +30,7 @@
         {
             this.perempuan = new System.Windows.Forms.RadioButton();
             this.laki = new System.Windows.Forms.RadioButton();
-            this.ActionTambah = new System.Windows.Forms.Button();
+            this.ActionSimpan = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,6 +43,7 @@
             this.FormTL = new System.Windows.Forms.DateTimePicker();
             this.FormNama = new System.Windows.Forms.TextBox();
             this.FormNip = new System.Windows.Forms.TextBox();
+            this.Formid = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // perempuan
@@ -71,15 +72,16 @@
             this.laki.Text = "L";
             this.laki.UseVisualStyleBackColor = true;
             // 
-            // ActionTambah
+            // ActionSimpan
             // 
-            this.ActionTambah.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.ActionTambah.Location = new System.Drawing.Point(177, 355);
-            this.ActionTambah.Name = "ActionTambah";
-            this.ActionTambah.Size = new System.Drawing.Size(93, 36);
-            this.ActionTambah.TabIndex = 29;
-            this.ActionTambah.Text = "Simpan";
-            this.ActionTambah.UseVisualStyleBackColor = true;
+            this.ActionSimpan.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.ActionSimpan.Location = new System.Drawing.Point(177, 355);
+            this.ActionSimpan.Name = "ActionSimpan";
+            this.ActionSimpan.Size = new System.Drawing.Size(93, 36);
+            this.ActionSimpan.TabIndex = 29;
+            this.ActionSimpan.Text = "Simpan";
+            this.ActionSimpan.UseVisualStyleBackColor = true;
+            this.ActionSimpan.Click += new System.EventHandler(this.ActionSimpan_Click);
             // 
             // label6
             // 
@@ -198,14 +200,27 @@
             this.FormNip.Size = new System.Drawing.Size(200, 25);
             this.FormNip.TabIndex = 15;
             // 
+            // Formid
+            // 
+            this.Formid.BackColor = System.Drawing.SystemColors.Control;
+            this.Formid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Formid.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Formid.Location = new System.Drawing.Point(414, 82);
+            this.Formid.Margin = new System.Windows.Forms.Padding(10);
+            this.Formid.Name = "Formid";
+            this.Formid.Size = new System.Drawing.Size(13, 18);
+            this.Formid.TabIndex = 30;
+            this.Formid.Visible = false;
+            // 
             // UpdateGuru
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(460, 414);
+            this.Controls.Add(this.Formid);
             this.Controls.Add(this.perempuan);
             this.Controls.Add(this.laki);
-            this.Controls.Add(this.ActionTambah);
+            this.Controls.Add(this.ActionSimpan);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -230,7 +245,7 @@
 
         private System.Windows.Forms.RadioButton perempuan;
         private System.Windows.Forms.RadioButton laki;
-        private System.Windows.Forms.Button ActionTambah;
+        private System.Windows.Forms.Button ActionSimpan;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -243,5 +258,6 @@
         private System.Windows.Forms.DateTimePicker FormTL;
         private System.Windows.Forms.TextBox FormNama;
         private System.Windows.Forms.TextBox FormNip;
+        private System.Windows.Forms.TextBox Formid;
     }
 }

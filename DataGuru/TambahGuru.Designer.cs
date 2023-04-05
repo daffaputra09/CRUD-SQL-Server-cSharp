@@ -53,6 +53,7 @@
             this.FormNip.Name = "FormNip";
             this.FormNip.Size = new System.Drawing.Size(200, 25);
             this.FormNip.TabIndex = 0;
+            this.FormNip.TextChanged += new System.EventHandler(this.FormNip_TextChanged);
             // 
             // FormNama
             // 

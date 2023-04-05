@@ -11,7 +11,7 @@ namespace DataGuru
         public SqlConnection GetConn()
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Server=ASUSVIVO15\\SQLEXPRESS;Initial Catalog=db_guru;Integrated Security=True";
+            conn.ConnectionString = "Server=DESKTOP-K1THODN\\SQLEXPRESS;Initial Catalog=db_guru;Integrated Security=True";
             return conn;
         }
     }

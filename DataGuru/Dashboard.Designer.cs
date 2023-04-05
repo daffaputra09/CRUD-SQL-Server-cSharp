@@ -41,14 +41,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.refresh = new System.Windows.Forms.Button();
+            this.trash = new System.Windows.Forms.Button();
             this.nip = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nama = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.JK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mapel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jenis_kelamin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tanggal_lahir = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mata_pelajaran = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gaji = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Update = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,14 +73,15 @@
             this.dataview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nip,
             this.nama,
-            this.JK,
-            this.TL,
-            this.Mapel,
+            this.jenis_kelamin,
+            this.tanggal_lahir,
+            this.mata_pelajaran,
             this.Gaji,
             this.delete,
-            this.Update});
+            this.Update,
+            this.id});
             this.dataview.Location = new System.Drawing.Point(28, 112);
-            this.dataview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataview.Margin = new System.Windows.Forms.Padding(2);
             this.dataview.Name = "dataview";
             this.dataview.ReadOnly = true;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -92,7 +95,7 @@
             this.dataview.RowHeadersVisible = false;
             this.dataview.RowHeadersWidth = 20;
             this.dataview.RowTemplate.Height = 24;
-            this.dataview.Size = new System.Drawing.Size(916, 264);
+            this.dataview.Size = new System.Drawing.Size(999, 264);
             this.dataview.TabIndex = 0;
             this.dataview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataview_CellContentClick);
             // 
@@ -111,7 +114,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.button1.Location = new System.Drawing.Point(28, 76);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(77, 32);
             this.button1.TabIndex = 2;
@@ -121,8 +124,8 @@
             // 
             // refresh
             // 
-            this.refresh.Location = new System.Drawing.Point(158, 32);
-            this.refresh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.refresh.Location = new System.Drawing.Point(154, 30);
+            this.refresh.Margin = new System.Windows.Forms.Padding(2);
             this.refresh.Name = "refresh";
             this.refresh.Size = new System.Drawing.Size(56, 19);
             this.refresh.TabIndex = 3;
@@ -130,12 +133,24 @@
             this.refresh.UseVisualStyleBackColor = true;
             this.refresh.Click += new System.EventHandler(this.refresh_Click);
             // 
+            // trash
+            // 
+            this.trash.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.trash.Location = new System.Drawing.Point(942, 381);
+            this.trash.Name = "trash";
+            this.trash.Size = new System.Drawing.Size(85, 33);
+            this.trash.TabIndex = 4;
+            this.trash.Text = "Trash";
+            this.trash.UseVisualStyleBackColor = true;
+            this.trash.Click += new System.EventHandler(this.trash_Click);
+            // 
             // nip
             // 
             this.nip.DataPropertyName = "nip";
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.nip.DefaultCellStyle = dataGridViewCellStyle2;
+            this.nip.Frozen = true;
             this.nip.HeaderText = "NIP";
             this.nip.MinimumWidth = 6;
             this.nip.Name = "nip";
@@ -149,48 +164,52 @@
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.nama.DefaultCellStyle = dataGridViewCellStyle3;
+            this.nama.Frozen = true;
             this.nama.HeaderText = "Nama";
             this.nama.MinimumWidth = 6;
             this.nama.Name = "nama";
             this.nama.ReadOnly = true;
             this.nama.Width = 125;
             // 
-            // JK
+            // jenis_kelamin
             // 
-            this.JK.DataPropertyName = "jenis_kelamin";
+            this.jenis_kelamin.DataPropertyName = "jenis_kelamin";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.JK.DefaultCellStyle = dataGridViewCellStyle4;
-            this.JK.HeaderText = "Jenis Kelamin";
-            this.JK.MinimumWidth = 6;
-            this.JK.Name = "JK";
-            this.JK.ReadOnly = true;
-            this.JK.Width = 116;
+            this.jenis_kelamin.DefaultCellStyle = dataGridViewCellStyle4;
+            this.jenis_kelamin.Frozen = true;
+            this.jenis_kelamin.HeaderText = "Jenis Kelamin";
+            this.jenis_kelamin.MinimumWidth = 6;
+            this.jenis_kelamin.Name = "jenis_kelamin";
+            this.jenis_kelamin.ReadOnly = true;
+            this.jenis_kelamin.Width = 116;
             // 
-            // TL
+            // tanggal_lahir
             // 
-            this.TL.DataPropertyName = "tanggal_lahir";
+            this.tanggal_lahir.DataPropertyName = "tanggal_lahir";
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TL.DefaultCellStyle = dataGridViewCellStyle5;
-            this.TL.HeaderText = "Tanggal Lahir";
-            this.TL.MinimumWidth = 6;
-            this.TL.Name = "TL";
-            this.TL.ReadOnly = true;
-            this.TL.Width = 150;
+            this.tanggal_lahir.DefaultCellStyle = dataGridViewCellStyle5;
+            this.tanggal_lahir.Frozen = true;
+            this.tanggal_lahir.HeaderText = "Tanggal Lahir";
+            this.tanggal_lahir.MinimumWidth = 6;
+            this.tanggal_lahir.Name = "tanggal_lahir";
+            this.tanggal_lahir.ReadOnly = true;
+            this.tanggal_lahir.Width = 150;
             // 
-            // Mapel
+            // mata_pelajaran
             // 
-            this.Mapel.DataPropertyName = "mata_pelajaran";
+            this.mata_pelajaran.DataPropertyName = "mata_pelajaran";
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Mapel.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Mapel.HeaderText = "Mata Pelajaran";
-            this.Mapel.MinimumWidth = 6;
-            this.Mapel.Name = "Mapel";
-            this.Mapel.ReadOnly = true;
-            this.Mapel.Width = 125;
+            this.mata_pelajaran.DefaultCellStyle = dataGridViewCellStyle6;
+            this.mata_pelajaran.Frozen = true;
+            this.mata_pelajaran.HeaderText = "Mata Pelajaran";
+            this.mata_pelajaran.MinimumWidth = 6;
+            this.mata_pelajaran.Name = "mata_pelajaran";
+            this.mata_pelajaran.ReadOnly = true;
+            this.mata_pelajaran.Width = 125;
             // 
             // Gaji
             // 
@@ -198,6 +217,7 @@
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.Gaji.DefaultCellStyle = dataGridViewCellStyle7;
+            this.Gaji.Frozen = true;
             this.Gaji.HeaderText = "Gaji";
             this.Gaji.MinimumWidth = 6;
             this.Gaji.Name = "Gaji";
@@ -210,6 +230,7 @@
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.delete.DefaultCellStyle = dataGridViewCellStyle8;
+            this.delete.Frozen = true;
             this.delete.HeaderText = "Delete";
             this.delete.Name = "delete";
             this.delete.ReadOnly = true;
@@ -219,23 +240,35 @@
             // 
             // Update
             // 
+            this.Update.Frozen = true;
             this.Update.HeaderText = "Update";
             this.Update.Name = "Update";
             this.Update.ReadOnly = true;
             this.Update.Text = "Update";
             this.Update.UseColumnTextForButtonValue = true;
             // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            this.id.Width = 5;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(986, 403);
+            this.ClientSize = new System.Drawing.Size(1057, 450);
+            this.Controls.Add(this.trash);
             this.Controls.Add(this.refresh);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataview);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Dashboard";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Dashboard_Load);
@@ -251,14 +284,16 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button refresh;
+        private System.Windows.Forms.Button trash;
         private System.Windows.Forms.DataGridViewTextBoxColumn nip;
         private System.Windows.Forms.DataGridViewTextBoxColumn nama;
-        private System.Windows.Forms.DataGridViewTextBoxColumn JK;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mapel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jenis_kelamin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tanggal_lahir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mata_pelajaran;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gaji;
         private System.Windows.Forms.DataGridViewButtonColumn delete;
         private System.Windows.Forms.DataGridViewButtonColumn Update;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
     }
 }
 

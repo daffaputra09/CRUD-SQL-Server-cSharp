@@ -85,6 +85,10 @@ namespace DataGuru
             }
         }
 
+        public void PanggilData(DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow Row = this.dataview.Rows[e.RowIndex];
+        }
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
@@ -98,11 +102,7 @@ namespace DataGuru
             newform.Show();
         }
 
-        public void PanggilData(DataGridViewCellEventArgs e)
-        {   
-            DataGridViewRow Row = this.dataview.Rows[e.RowIndex];
 
-        }
         private void dataview_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -120,8 +120,17 @@ namespace DataGuru
                 }
                 if (dataview.Columns[e.ColumnIndex].Name == "Update")
                 {
-                    UpdateGuru newform = new UpdateGuru();
-                    newform.Show();
+                    DataGridViewRow selectedRow = dataview.Rows[e.RowIndex];
+                    
+                    UpdateGuru updateForm = new UpdateGuru(selectedRow.Cells["nip"].Value.ToString(),
+                                                           selectedRow.Cells["nama"].Value.ToString(),
+                                                           selectedRow.Cells["jenis_kelamin"].Value.ToString(),
+                                                           selectedRow.Cells["tanggal_lahir"].Value.ToString(),
+                                                           selectedRow.Cells["mata_pelajaran"].Value.ToString(),
+                                                           selectedRow.Cells["Gaji"].Value.ToString(),
+                                                           selectedRow.Cells["id"].Value.ToString());
+
+                    updateForm.Show();
                 }
             }
             catch (Exception ex)
@@ -151,6 +160,12 @@ namespace DataGuru
             {
                 conn.Close();
             }
+        }
+
+        private void trash_Click(object sender, EventArgs e)
+        {
+            Trash newform = new Trash();
+            newform.Show();
         }
     }
 }

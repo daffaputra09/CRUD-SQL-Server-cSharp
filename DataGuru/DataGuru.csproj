@@ -61,6 +61,12 @@
     <Compile Include="TambahGuru.Designer.cs">
       <DependentUpon>TambahGuru.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trash.Designer.cs">
+      <DependentUpon>Trash.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpdateGuru.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     </Compile>
     <EmbeddedResource Include="TambahGuru.resx">
       <DependentUpon>TambahGuru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trash.resx">
+      <DependentUpon>Trash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateGuru.resx">
       <DependentUpon>UpdateGuru.cs</DependentUpon>
