@@ -69,6 +69,7 @@ namespace DataGuru
                 cmd.Parameters.AddWithValue("@updated_at", DateTime.Now);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Data Berhasil Diubah");
+                this.Close();
             }
             catch (Exception ex)
             {
