@@ -58,6 +58,9 @@
             // 
             this.dataview.AllowUserToAddRows = false;
             this.dataview.AllowUserToDeleteRows = false;
+            this.dataview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataview.BackgroundColor = System.Drawing.Color.White;
             this.dataview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -249,8 +252,12 @@
             // 
             // trash
             // 
+            this.trash.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.trash.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.trash.Location = new System.Drawing.Point(942, 381);
+            this.trash.MaximumSize = new System.Drawing.Size(85, 33);
             this.trash.Name = "trash";
             this.trash.Size = new System.Drawing.Size(85, 33);
             this.trash.TabIndex = 4;

@@ -43,7 +43,7 @@ namespace DataGuru
             }
         }
 
-        public void Refresh()
+        public void RefreshData()
         {
             SqlConnection conn = a.GetConn();
             try
@@ -66,18 +66,18 @@ namespace DataGuru
             }
         }
 
-        private void DeleteOnView(string nip)
+        private void DeleteOnView(string id)
         {
             SqlConnection conn = a.GetConn();
-            string query = "UPDATE tb_guru SET is_deleted = 1  WHERE nip = @nip";
+            string query = "UPDATE tb_guru SET is_deleted = 1  WHERE id = @id";
 
             try
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@nip", nip);
+                cmd.Parameters.AddWithValue("@id", id);
                 cmd.ExecuteNonQuery();
-                Refresh();
+                RefreshData();
             }
             catch (Exception ex)
             {
@@ -92,7 +92,6 @@ namespace DataGuru
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            Refresh();
             Tampil();
         }
 
@@ -111,9 +110,9 @@ namespace DataGuru
                 {
                     if (MessageBox.Show(string.Format("Apakah anda yakin ingin menghapus data?"), "Konfirmasi", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        string nip = dataview.Rows[e.RowIndex].Cells["nip"].Value.ToString();
+                        string id = dataview.Rows[e.RowIndex].Cells["id"].Value.ToString();
 
-                        DeleteOnView(nip);
+                        DeleteOnView(id);
 
                         MessageBox.Show("Data berhasil dihapus");
                     }
@@ -167,5 +166,7 @@ namespace DataGuru
             Trash newform = new Trash();
             newform.Show();
         }
+
+
     }
 }

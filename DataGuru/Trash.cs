@@ -66,14 +66,20 @@ namespace DataGuru
         private void RestoreTrash()
         {
             SqlConnection conn = a.GetConn();
-            string query = "UPDATE tb_guru SET is_deleted = 0  WHERE is_deleted='True';";
-
+            string query = "UPDATE tb_guru SET is_deleted = 0  WHERE is_deleted='True' AND NOT nip IN (SELECT nip FROM tb_guru WHERE is_deleted='False');";
+            int trash = dataviewtrash.Rows.Count;
             try
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 RefreshTrash();
+                int RestoreGagal = dataviewtrash.Rows.Count;
+                int RestoreBerhasil = trash - RestoreGagal;
+                LabelRestore.Text = "Hasil Restore:";
+                LabelBerhasil.Text = RestoreBerhasil + " Data Berhasil";
+                LabelGagal.Text = RestoreGagal + " Data Gagal";
+
             }
             catch (Exception ex)
             {
@@ -112,6 +118,7 @@ namespace DataGuru
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            
             if (MessageBox.Show(string.Format("Apakah anda yakin ingin menghapus data secara PERMANEN?"), "Konfirmasi", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 DeletePermanently();
@@ -119,6 +126,11 @@ namespace DataGuru
 
                 MessageBox.Show("Data berhasil dihapus");
             }
+        }
+
+        private void dataviewtrash_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -15,7 +15,7 @@ namespace DataGuru
 {
     public partial class UpdateGuru : Form
     {
-        string gender;
+
         Koneksi a = new Koneksi();
         
         public UpdateGuru(string nip, string nama, string jenis_kelamin, string tanggal_lahir, string mata_pelajaran,string gaji, string id)
