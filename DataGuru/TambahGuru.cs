@@ -14,8 +14,6 @@ namespace DataGuru
     public partial class TambahGuru : Form
     {
         private SqlCommand cmd;
-        private SqlDataAdapter da;
-        private DataSet ds;
 
         Koneksi a = new Koneksi();
 
