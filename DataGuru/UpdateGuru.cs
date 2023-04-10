@@ -51,7 +51,7 @@ namespace DataGuru
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE tb_guru SET nip=@nip, nama=@nama, jenis_kelamin=@jenis_kelamin, tanggal_lahir=@tanggal_lahir, mata_pelajaran=@mata_pelajaran, Gaji=@gaji, updated_at=@updated_at WHERE id=@id", conn);
+                SqlCommand cmd = new SqlCommand("UPDATE tb_guru SET nip=@nip, nama=@nama, jenis_kelamin=@jenis_kelamin, tanggal_lahir=@tanggal_lahir, mata_pelajaran=@mata_pelajaran, Gaji=@gaji, updated_at=@updated_at WHERE id=@id ", conn);
                 cmd.Parameters.AddWithValue("@id", Formid.Text);
                 cmd.Parameters.AddWithValue("@nip", FormNip.Text);
                 cmd.Parameters.AddWithValue("@nama", FormNama.Text);

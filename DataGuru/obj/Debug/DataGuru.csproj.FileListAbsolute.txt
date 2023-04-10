@@ -25,3 +25,17 @@ C:\daffa\CRUD-SQL-Server-c-\DataGuru\obj\Debug\DataGuru.csproj.CoreCompileInputs
 C:\daffa\CRUD-SQL-Server-c-\DataGuru\obj\Debug\DataGuru.exe
 C:\daffa\CRUD-SQL-Server-c-\DataGuru\obj\Debug\DataGuru.pdb
 C:\daffa\CRUD-SQL-Server-c-\DataGuru\obj\Debug\DataGuru.Trash.resources
+D:\cs\CRUD-SQL-Server-cSharp\DataGuru\bin\Debug\DataGuru.exe.config
+D:\cs\CRUD-SQL-Server-cSharp\DataGuru\bin\Debug\DataGuru.exe
+D:\cs\CRUD-SQL-Server-cSharp\DataGuru\bin\Debug\DataGuru.pdb
+D:\cs\CRUD-SQL-Server-cSharp\DataGuru\obj\Debug\DataGuru.csproj.AssemblyReference.cache
+D:\cs\CRUD-SQL-Server-cSharp\DataGuru\obj\Debug\DataGuru.csproj.SuggestedBindingRedirects.cache
+D:\cs\CRUD-SQL-Server-cSharp\DataGuru\obj\Debug\DataGuru.Dashboard.resources
+D:\cs\CRUD-SQL-Server-cSharp\DataGuru\obj\Debug\DataGuru.Properties.Resources.resources
+D:\cs\CRUD-SQL-Server-cSharp\DataGuru\obj\Debug\DataGuru.TambahGuru.resources
+D:\cs\CRUD-SQL-Server-cSharp\DataGuru\obj\Debug\DataGuru.Trash.resources
+D:\cs\CRUD-SQL-Server-cSharp\DataGuru\obj\Debug\DataGuru.UpdateGuru.resources
+D:\cs\CRUD-SQL-Server-cSharp\DataGuru\obj\Debug\DataGuru.csproj.GenerateResource.cache
+D:\cs\CRUD-SQL-Server-cSharp\DataGuru\obj\Debug\DataGuru.csproj.CoreCompileInputs.cache
+D:\cs\CRUD-SQL-Server-cSharp\DataGuru\obj\Debug\DataGuru.exe
+D:\cs\CRUD-SQL-Server-cSharp\DataGuru\obj\Debug\DataGuru.pdb

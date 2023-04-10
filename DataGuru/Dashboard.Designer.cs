@@ -37,6 +37,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.dataview = new System.Windows.Forms.DataGridView();
             this.nip = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nama = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +52,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.refresh = new System.Windows.Forms.Button();
             this.trash = new System.Windows.Forms.Button();
+            this.SearchBox = new System.Windows.Forms.TextBox();
+            this.SearchBuutton = new System.Windows.Forms.Button();
+            this.LabelTotal = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,9 +63,6 @@
             // 
             this.dataview.AllowUserToAddRows = false;
             this.dataview.AllowUserToDeleteRows = false;
-            this.dataview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataview.BackgroundColor = System.Drawing.Color.White;
             this.dataview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -84,7 +86,7 @@
             this.Update,
             this.id});
             this.dataview.Location = new System.Drawing.Point(28, 112);
-            this.dataview.Margin = new System.Windows.Forms.Padding(2);
+            this.dataview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataview.Name = "dataview";
             this.dataview.ReadOnly = true;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -98,7 +100,7 @@
             this.dataview.RowHeadersVisible = false;
             this.dataview.RowHeadersWidth = 20;
             this.dataview.RowTemplate.Height = 24;
-            this.dataview.Size = new System.Drawing.Size(999, 264);
+            this.dataview.Size = new System.Drawing.Size(1045, 264);
             this.dataview.TabIndex = 0;
             this.dataview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataview_CellContentClick);
             // 
@@ -190,30 +192,35 @@
             this.delete.DefaultCellStyle = dataGridViewCellStyle8;
             this.delete.Frozen = true;
             this.delete.HeaderText = "Delete";
+            this.delete.MinimumWidth = 6;
             this.delete.Name = "delete";
             this.delete.ReadOnly = true;
             this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.delete.Text = "Delete";
             this.delete.UseColumnTextForButtonValue = true;
+            this.delete.Width = 125;
             // 
             // Update
             // 
             this.Update.Frozen = true;
             this.Update.HeaderText = "Update";
+            this.Update.MinimumWidth = 6;
             this.Update.Name = "Update";
             this.Update.ReadOnly = true;
             this.Update.Text = "Update";
             this.Update.UseColumnTextForButtonValue = true;
+            this.Update.Width = 125;
             // 
             // id
             // 
             this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.id.DataPropertyName = "id";
             this.id.HeaderText = "id";
+            this.id.MinimumWidth = 6;
             this.id.Name = "id";
             this.id.ReadOnly = true;
             this.id.Visible = false;
-            this.id.Width = 5;
+            this.id.Width = 6;
             // 
             // label1
             // 
@@ -230,7 +237,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.button1.Location = new System.Drawing.Point(28, 76);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(77, 32);
             this.button1.TabIndex = 2;
@@ -242,7 +249,7 @@
             // 
             this.refresh.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.refresh.Location = new System.Drawing.Point(109, 76);
-            this.refresh.Margin = new System.Windows.Forms.Padding(2);
+            this.refresh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.refresh.Name = "refresh";
             this.refresh.Size = new System.Drawing.Size(77, 32);
             this.refresh.TabIndex = 3;
@@ -256,7 +263,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.trash.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.trash.Location = new System.Drawing.Point(942, 381);
+            this.trash.Location = new System.Drawing.Point(988, 381);
             this.trash.MaximumSize = new System.Drawing.Size(85, 33);
             this.trash.Name = "trash";
             this.trash.Size = new System.Drawing.Size(85, 33);
@@ -265,20 +272,64 @@
             this.trash.UseVisualStyleBackColor = true;
             this.trash.Click += new System.EventHandler(this.trash_Click);
             // 
+            // SearchBox
+            // 
+            this.SearchBox.Font = new System.Drawing.Font("Segoe UI", 12.5F);
+            this.SearchBox.Location = new System.Drawing.Point(818, 76);
+            this.SearchBox.Name = "SearchBox";
+            this.SearchBox.Size = new System.Drawing.Size(173, 30);
+            this.SearchBox.TabIndex = 5;
+            // 
+            // SearchBuutton
+            // 
+            this.SearchBuutton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.SearchBuutton.Location = new System.Drawing.Point(996, 76);
+            this.SearchBuutton.Margin = new System.Windows.Forms.Padding(2);
+            this.SearchBuutton.Name = "SearchBuutton";
+            this.SearchBuutton.Size = new System.Drawing.Size(77, 32);
+            this.SearchBuutton.TabIndex = 6;
+            this.SearchBuutton.Text = "Search";
+            this.SearchBuutton.UseVisualStyleBackColor = true;
+            this.SearchBuutton.Click += new System.EventHandler(this.SearchBuutton_Click);
+            // 
+            // LabelTotal
+            // 
+            this.LabelTotal.AutoSize = true;
+            this.LabelTotal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelTotal.Location = new System.Drawing.Point(259, 85);
+            this.LabelTotal.Name = "LabelTotal";
+            this.LabelTotal.Size = new System.Drawing.Size(0, 15);
+            this.LabelTotal.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label2.Location = new System.Drawing.Point(191, 85);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 15);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Total Data:";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1057, 450);
+            this.ClientSize = new System.Drawing.Size(1103, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.LabelTotal);
+            this.Controls.Add(this.SearchBuutton);
+            this.Controls.Add(this.SearchBox);
             this.Controls.Add(this.trash);
             this.Controls.Add(this.refresh);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataview);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Dashboard";
-            this.Text = "Form1";
+            this.Text = "Data Guru";
             this.Load += new System.EventHandler(this.Dashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataview)).EndInit();
             this.ResumeLayout(false);
@@ -302,6 +353,10 @@
         private System.Windows.Forms.DataGridViewButtonColumn delete;
         private System.Windows.Forms.DataGridViewButtonColumn Update;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.TextBox SearchBox;
+        private System.Windows.Forms.Button SearchBuutton;
+        private System.Windows.Forms.Label LabelTotal;
+        private System.Windows.Forms.Label label2;
     }
 }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,28 @@ namespace DataGuru
         {
             InitializeComponent();
         }
+        public void TotalData()
+        {
+            SqlConnection conn = a.GetConn();
+            string query = "SELECT total FROM tb_totalguru";
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    LabelTotal.Text = dr["total"].ToString();
+                }
 
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
         public void Tampil()
         {
             SqlConnection conn = a.GetConn();
@@ -32,29 +54,13 @@ namespace DataGuru
                 dataview.RowTemplate.Height = 30;
                 dataview.AutoGenerateColumns = false;
                 dataview.DataSource = table;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
 
-        public void RefreshData()
-        {
-            SqlConnection conn = a.GetConn();
-            try
-            {
-                conn.Open();
-                SqlDataAdapter data = new SqlDataAdapter("SELECT * FROM tb_guru WHERE is_deleted='False';", conn);
-                DataTable table = new DataTable();
-                data.Fill(table);
-
-                dataview.AutoGenerateColumns = false;
-                dataview.DataSource = table;
+                SqlCommand cmd = new SqlCommand("SELECT total FROM tb_totalguru;", conn);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    LabelTotal.Text = dr["total"].ToString();
+                }
             }
             catch (Exception ex)
             {
@@ -77,19 +83,35 @@ namespace DataGuru
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@id", id);
                 cmd.ExecuteNonQuery();
-                RefreshData();
+                Tampil();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
-        public void PanggilData(DataGridViewCellEventArgs e)
+        public void SearchData()
         {
-            DataGridViewRow Row = this.dataview.Rows[e.RowIndex];
+            SqlConnection conn = a.GetConn();
+            try
+            {
+                conn.Open();
+                SqlDataAdapter data = new SqlDataAdapter("SELECT * FROM tb_guru WHERE is_deleted='False' AND nip like '%" + SearchBox.Text + " %' OR nama like '%" + SearchBox.Text + " %' OR mata_pelajaran like '%" + SearchBox.Text + " %';", conn);
+                DataTable table = new DataTable();
+                data.Fill(table);
+                dataview.RowTemplate.Height = 30;
+                dataview.AutoGenerateColumns = false;
+                dataview.DataSource = table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
-
         private void Dashboard_Load(object sender, EventArgs e)
         {
             Tampil();
@@ -140,25 +162,7 @@ namespace DataGuru
 
         private void refresh_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = a.GetConn();
-            try
-            {
-                conn.Open();
-                SqlDataAdapter data = new SqlDataAdapter("SELECT * FROM tb_guru WHERE is_deleted='False';", conn);
-                DataTable table = new DataTable();
-                data.Fill(table);
-
-                dataview.AutoGenerateColumns = false;
-                dataview.DataSource = table;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                conn.Close();
-            }
+            Tampil();
         }
 
         private void trash_Click(object sender, EventArgs e)
@@ -167,6 +171,10 @@ namespace DataGuru
             newform.Show();
         }
 
+        private void SearchBuutton_Click(object sender, EventArgs e)
+        {
+            SearchData();
+        }
 
     }
 }
