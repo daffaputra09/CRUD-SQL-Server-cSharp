@@ -48,7 +48,7 @@ namespace DataGuru
             try
             {
                 conn.Open();
-                SqlDataAdapter data = new SqlDataAdapter("SELECT * FROM tb_guru WHERE is_deleted='False';", conn);
+                SqlDataAdapter data = new SqlDataAdapter("EXEC TampilGuru;", conn);
                 DataTable table = new DataTable();
                 data.Fill(table);
                 dataview.RowTemplate.Height = 30;

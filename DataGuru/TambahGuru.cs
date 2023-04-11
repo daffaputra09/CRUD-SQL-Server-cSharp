@@ -48,7 +48,7 @@ namespace DataGuru
                 }
                 try
                 {
-                    cmd = new SqlCommand("insert into tb_guru values('" + FormNip.Text + "','" + FormNama.Text + "','" + gender + "','" + FormTL.Text + "','" + FormMapel.Text + "','" + FormGaji.Text + "','" + 0 + "','" + DateTime.Now + "','" + DateTime.Now + "')", conn);
+                    cmd = new SqlCommand("insert into tb_guru (nip, nama, jenis_kelamin, tanggal_lahir, mata_pelajaran, gaji, is_deleted, created_at, updated_at)  values('" + FormNip.Text + "','" + FormNama.Text + "','" + gender + "','" + FormTL.Text + "','" + FormMapel.Text + "','" + FormGaji.Text + "','" + 0 + "','" + DateTime.Now + "','" + DateTime.Now + "')", conn);
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Tambah data berhasil");

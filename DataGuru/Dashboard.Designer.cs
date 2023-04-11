@@ -86,7 +86,7 @@
             this.Update,
             this.id});
             this.dataview.Location = new System.Drawing.Point(28, 112);
-            this.dataview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataview.Margin = new System.Windows.Forms.Padding(2);
             this.dataview.Name = "dataview";
             this.dataview.ReadOnly = true;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -237,7 +237,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.button1.Location = new System.Drawing.Point(28, 76);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(77, 32);
             this.button1.TabIndex = 2;
@@ -249,7 +249,7 @@
             // 
             this.refresh.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.refresh.Location = new System.Drawing.Point(109, 76);
-            this.refresh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.refresh.Margin = new System.Windows.Forms.Padding(2);
             this.refresh.Name = "refresh";
             this.refresh.Size = new System.Drawing.Size(77, 32);
             this.refresh.TabIndex = 3;
@@ -259,9 +259,6 @@
             // 
             // trash
             // 
-            this.trash.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.trash.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.trash.Location = new System.Drawing.Point(988, 381);
             this.trash.MaximumSize = new System.Drawing.Size(85, 33);
@@ -327,7 +324,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataview);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Dashboard";
             this.Text = "Data Guru";
             this.Load += new System.EventHandler(this.Dashboard_Load);
