@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataviewtrash = new System.Windows.Forms.DataGridView();
             this.nip = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nama = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +49,7 @@
             this.LabelRestore = new System.Windows.Forms.Label();
             this.LabelBerhasil = new System.Windows.Forms.Label();
             this.LabelGagal = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataviewtrash)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,15 +59,15 @@
             this.dataviewtrash.AllowUserToDeleteRows = false;
             this.dataviewtrash.BackgroundColor = System.Drawing.Color.White;
             this.dataviewtrash.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle25.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataviewtrash.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataviewtrash.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataviewtrash.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataviewtrash.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nip,
@@ -79,14 +80,14 @@
             this.dataviewtrash.Margin = new System.Windows.Forms.Padding(2);
             this.dataviewtrash.Name = "dataviewtrash";
             this.dataviewtrash.ReadOnly = true;
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataviewtrash.RowHeadersDefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataviewtrash.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dataviewtrash.RowHeadersVisible = false;
             this.dataviewtrash.RowHeadersWidth = 20;
             this.dataviewtrash.RowTemplate.Height = 24;
@@ -97,9 +98,9 @@
             // nip
             // 
             this.nip.DataPropertyName = "nip";
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.nip.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.nip.DefaultCellStyle = dataGridViewCellStyle10;
             this.nip.HeaderText = "NIP";
             this.nip.MinimumWidth = 6;
             this.nip.Name = "nip";
@@ -110,9 +111,9 @@
             // nama
             // 
             this.nama.DataPropertyName = "nama";
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.nama.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.nama.DefaultCellStyle = dataGridViewCellStyle11;
             this.nama.HeaderText = "Nama";
             this.nama.MinimumWidth = 6;
             this.nama.Name = "nama";
@@ -122,10 +123,10 @@
             // JK
             // 
             this.JK.DataPropertyName = "jenis_kelamin";
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.JK.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.JK.DefaultCellStyle = dataGridViewCellStyle12;
             this.JK.HeaderText = "Jenis Kelamin";
             this.JK.MinimumWidth = 6;
             this.JK.Name = "JK";
@@ -135,9 +136,9 @@
             // TL
             // 
             this.TL.DataPropertyName = "tanggal_lahir";
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TL.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TL.DefaultCellStyle = dataGridViewCellStyle13;
             this.TL.HeaderText = "Tanggal Lahir";
             this.TL.MinimumWidth = 6;
             this.TL.Name = "TL";
@@ -147,9 +148,9 @@
             // Mapel
             // 
             this.Mapel.DataPropertyName = "mata_pelajaran";
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Mapel.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Mapel.DefaultCellStyle = dataGridViewCellStyle14;
             this.Mapel.HeaderText = "Mata Pelajaran";
             this.Mapel.MinimumWidth = 6;
             this.Mapel.Name = "Mapel";
@@ -159,9 +160,9 @@
             // Gaji
             // 
             this.Gaji.DataPropertyName = "gaji";
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Gaji.DefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Gaji.DefaultCellStyle = dataGridViewCellStyle15;
             this.Gaji.HeaderText = "Gaji";
             this.Gaji.MinimumWidth = 6;
             this.Gaji.Name = "Gaji";
@@ -210,6 +211,7 @@
             // LabelRestore
             // 
             this.LabelRestore.AutoSize = true;
+            this.LabelRestore.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelRestore.ForeColor = System.Drawing.Color.Black;
             this.LabelRestore.Location = new System.Drawing.Point(168, 39);
             this.LabelRestore.Name = "LabelRestore";
@@ -219,6 +221,7 @@
             // LabelBerhasil
             // 
             this.LabelBerhasil.AutoSize = true;
+            this.LabelBerhasil.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.LabelBerhasil.ForeColor = System.Drawing.Color.Green;
             this.LabelBerhasil.Location = new System.Drawing.Point(244, 39);
             this.LabelBerhasil.Name = "LabelBerhasil";
@@ -228,17 +231,30 @@
             // LabelGagal
             // 
             this.LabelGagal.AutoSize = true;
+            this.LabelGagal.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.LabelGagal.ForeColor = System.Drawing.Color.Red;
             this.LabelGagal.Location = new System.Drawing.Point(347, 39);
             this.LabelGagal.Name = "LabelGagal";
             this.LabelGagal.Size = new System.Drawing.Size(0, 13);
             this.LabelGagal.TabIndex = 8;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(21, 336);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(239, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "*Data akan otomatis terhapus setelah 30 hari";
+            // 
             // Trash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 394);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.LabelGagal);
             this.Controls.Add(this.LabelBerhasil);
             this.Controls.Add(this.LabelRestore);
@@ -270,5 +286,6 @@
         private System.Windows.Forms.Label LabelRestore;
         private System.Windows.Forms.Label LabelBerhasil;
         private System.Windows.Forms.Label LabelGagal;
+        private System.Windows.Forms.Label label2;
     }
 }

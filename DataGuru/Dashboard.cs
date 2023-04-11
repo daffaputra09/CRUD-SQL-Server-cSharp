@@ -75,13 +75,14 @@ namespace DataGuru
         private void DeleteOnView(string id)
         {
             SqlConnection conn = a.GetConn();
-            string query = "UPDATE tb_guru SET is_deleted = 1  WHERE id = @id";
+            string query = "UPDATE tb_guru SET is_deleted = 1, is_deleted_at = @is_deleted_at  WHERE id = @id";
 
             try
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@is_deleted_at", DateTime.Now);
                 cmd.ExecuteNonQuery();
                 Tampil();
             }
