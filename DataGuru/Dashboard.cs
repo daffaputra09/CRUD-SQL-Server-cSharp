@@ -75,14 +75,14 @@ namespace DataGuru
         private void DeleteOnView(string id)
         {
             SqlConnection conn = a.GetConn();
-            string query = "UPDATE tb_guru SET is_deleted = 1, is_deleted_at = @is_deleted_at  WHERE id = @id";
+            string query = "UPDATE tb_guru SET is_deleted = 1, updated_at = @updated_at  WHERE id = @id";
 
             try
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@id", id);
-                cmd.Parameters.AddWithValue("@is_deleted_at", DateTime.Now);
+                cmd.Parameters.AddWithValue("@updated_at", DateTime.Now);
                 cmd.ExecuteNonQuery();
                 Tampil();
             }
@@ -121,7 +121,8 @@ namespace DataGuru
         private void button1_Click(object sender, EventArgs e)
         {
             TambahGuru newform = new TambahGuru();
-            newform.Show();
+            newform.ShowDialog();
+            Tampil();
         }
 
 
@@ -152,7 +153,8 @@ namespace DataGuru
                                                            selectedRow.Cells["Gaji"].Value.ToString(),
                                                            selectedRow.Cells["id"].Value.ToString());
 
-                    updateForm.Show();
+                    updateForm.ShowDialog();
+                    Tampil();
                 }
             }
             catch (Exception ex)
@@ -169,7 +171,8 @@ namespace DataGuru
         private void trash_Click(object sender, EventArgs e)
         {
             Trash newform = new Trash();
-            newform.Show();
+            newform.ShowDialog();
+            Tampil();
         }
 
         private void SearchBuutton_Click(object sender, EventArgs e)

@@ -25,7 +25,7 @@ namespace DataGuru
             try
             {
                 conn.Open();
-                SqlDataAdapter data = new SqlDataAdapter("SELECT * FROM tb_guru WHERE is_deleted='True';", conn);
+                SqlDataAdapter data = new SqlDataAdapter("EXEC ExpiredData", conn);
                 DataTable table = new DataTable();
                 data.Fill(table);
                 dataviewtrash.RowTemplate.Height = 30;
@@ -66,12 +66,13 @@ namespace DataGuru
         private void RestoreTrash()
         {
             SqlConnection conn = a.GetConn();
-            string query = "UPDATE tb_guru SET is_deleted = 0, is_deleted_at = NULL  WHERE is_deleted='True' AND NOT nip IN (SELECT nip FROM tb_guru WHERE is_deleted='False');";
+            string query = "UPDATE tb_guru SET is_deleted = 0, updated_at=@updated_at  WHERE is_deleted='True' AND NOT nip IN (SELECT nip FROM tb_guru WHERE is_deleted='False');";
             int trash = dataviewtrash.Rows.Count;
             try
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@updated_at", DateTime.Now);
                 cmd.ExecuteNonQuery();
                 RefreshTrash();
                 int RestoreGagal = dataviewtrash.Rows.Count;
