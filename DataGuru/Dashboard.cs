@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,8 @@ namespace DataGuru
     public partial class Dashboard : Form
     {
         Koneksi a = new Koneksi();
-
+        bool drag = false;
+        Point StartPoint = new Point(0,0);
         public Dashboard()
         {
             InitializeComponent();
@@ -97,12 +99,24 @@ namespace DataGuru
             try
             {
                 conn.Open();
-                SqlDataAdapter data = new SqlDataAdapter("SELECT * FROM tb_guru WHERE is_deleted='False' AND nip like '%" + SearchBox.Text + " %' OR nama like '%" + SearchBox.Text + " %' OR mata_pelajaran like '%" + SearchBox.Text + " %';", conn);
+                SqlDataAdapter data = new SqlDataAdapter("SELECT * FROM tb_guru WHERE (nip like '%" + SearchBox.Text + "%' OR nama like '%" + SearchBox.Text + "%' OR mata_pelajaran like '%" + SearchBox.Text + "%') AND is_deleted='False';", conn);
                 DataTable table = new DataTable();
                 data.Fill(table);
                 dataview.RowTemplate.Height = 30;
                 dataview.AutoGenerateColumns = false;
                 dataview.DataSource = table;
+                int JumlahSearch = dataview.Rows.Count;
+                LabelTotal.Text = JumlahSearch.ToString();
+
+                if(SearchBox.Text.Length == 0 || SearchBox.Text == " ")
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT total FROM tb_totalguru;", conn);
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        LabelTotal.Text = dr["total"].ToString();
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -166,6 +180,7 @@ namespace DataGuru
         private void refresh_Click(object sender, EventArgs e)
         {
             Tampil();
+            SearchBox.Text = "";
         }
 
         private void trash_Click(object sender, EventArgs e)
@@ -180,5 +195,49 @@ namespace DataGuru
             SearchData();
         }
 
+        private void PanelHeader_MouseDown(object sender, MouseEventArgs e)
+        {
+            drag = true;
+            StartPoint = new Point(e.X, e.Y);
+        }
+
+        private void PanelHeader_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (drag)
+            {
+                Point a = PointToScreen(e.Location);
+                this.Location = new Point (a.X - StartPoint.X, a.Y- StartPoint.Y);
+            }
+        }
+
+        private void PanelHeader_MouseUp(object sender, MouseEventArgs e)
+        {
+            drag = false;
+        }
+
+        private void ButtonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void SearchBox_TextChanged(object sender, EventArgs e)
+        {
+            SearchData();
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+           
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

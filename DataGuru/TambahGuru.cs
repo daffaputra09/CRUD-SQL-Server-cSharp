@@ -33,7 +33,7 @@ namespace DataGuru
 
         private void ActionTambah_Click(object sender, EventArgs e)
         {
-            if (FormNip.Text == "" || FormNama.Text == "" || FormGaji.Text == "" || FormTL.Text == "" || FormMapel.Text == "")
+            if (FormNip.Text == "" || FormNama.Text == "" || laki.Checked == false && perempuan.Checked == false || FormGaji.Text == "" || FormTL.Text == "" || FormMapel.Text == "")
             {
                 MessageBox.Show("Data Belum Lengkap");
             }
@@ -46,7 +46,7 @@ namespace DataGuru
                 {
                     gender = "L";
                 }
-                else
+                else if (perempuan.Checked == true)
                 {
                     gender = "P";
                 }

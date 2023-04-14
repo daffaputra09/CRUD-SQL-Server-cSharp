@@ -17,15 +17,15 @@ namespace DataGuru
     {
         Koneksi a = new Koneksi();
 
-        
-        public UpdateGuru(string nip, string nama, string jenis_kelamin, string tanggal_lahir, string mata_pelajaran,string gaji, string id)
+
+        public UpdateGuru(string nip, string nama, string jenis_kelamin, string tanggal_lahir, string mata_pelajaran, string gaji, string id)
         {
             InitializeComponent();
             FormNip.Text = nip;
             FormNama.Text = nama;
-            if(jenis_kelamin == "L")
+            if (jenis_kelamin == "L")
             {
-                laki.Checked= true;
+                laki.Checked = true;
 
             }
             else if (jenis_kelamin == "P")
@@ -34,11 +34,9 @@ namespace DataGuru
             }
             FormTL.Text = tanggal_lahir;
             FormMapel.Text = mata_pelajaran;
-            FormGaji.Text = gaji; 
+            FormGaji.Text = gaji;
             Formid.Text = id;
         }
-        
-            
 
         private void UpdateGuru_Load(object sender, EventArgs e)
         {
@@ -47,7 +45,7 @@ namespace DataGuru
 
         private void ActionSimpan_Click(object sender, EventArgs e)
         {
-            if (FormNip.Text == "" || FormNama.Text == "" || FormGaji.Text == "" || FormTL.Text == "" || FormMapel.Text == "")
+            if (FormNip.Text == "" || FormNama.Text == "" || laki.Checked == false && perempuan.Checked == false || FormGaji.Text == "" || FormTL.Text == "" || FormMapel.Text == "")
             {
                 MessageBox.Show("Data Belum Lengkap");
             }
@@ -55,13 +53,18 @@ namespace DataGuru
             {
                 string nip = FormNip.Text;
                 string CekNip = $"SELECT COUNT(*) FROM tb_guru WHERE nip = '{nip}'";
+                string CekNip2 = $"SELECT nip FROM tb_guru WHERE id=@id";
                 SqlConnection conn = a.GetConn();
                 try
                 {
                     conn.Open();
                     SqlCommand cek = new SqlCommand(CekNip, conn);
+                    SqlCommand cek2 = new SqlCommand(CekNip2, conn);
+                    cek2.Parameters.AddWithValue("@id", Formid.Text);
+                    cek2.ExecuteNonQuery();
+
                     int count = (int)cek.ExecuteScalar();
-                    if (count == 0)
+                    if (count == 0 || nip == CekNip2)
                     {
                         SqlCommand cmd = new SqlCommand("UPDATE tb_guru SET nip=@nip, nama=@nama, jenis_kelamin=@jenis_kelamin, tanggal_lahir=@tanggal_lahir, mata_pelajaran=@mata_pelajaran, Gaji=@gaji, updated_at=@updated_at WHERE id=@id ", conn);
                         cmd.Parameters.AddWithValue("@id", Formid.Text);
