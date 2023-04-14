@@ -53,9 +53,12 @@ namespace DataGuru
                 SqlDataAdapter data = new SqlDataAdapter("EXEC TampilGuru;", conn);
                 DataTable table = new DataTable();
                 data.Fill(table);
-                dataview.RowTemplate.Height = 30;
+                dataview.RowTemplate.Height = 40;
                 dataview.AutoGenerateColumns = false;
                 dataview.DataSource = table;
+                dataview.AdvancedCellBorderStyle.Left = DataGridViewAdvancedCellBorderStyle.None;
+                dataview.AdvancedCellBorderStyle.Right = DataGridViewAdvancedCellBorderStyle.None;
+
 
                 SqlCommand cmd = new SqlCommand("SELECT total FROM tb_totalguru;", conn);
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -102,7 +105,7 @@ namespace DataGuru
                 SqlDataAdapter data = new SqlDataAdapter("SELECT * FROM tb_guru WHERE (nip like '%" + SearchBox.Text + "%' OR nama like '%" + SearchBox.Text + "%' OR mata_pelajaran like '%" + SearchBox.Text + "%') AND is_deleted='False';", conn);
                 DataTable table = new DataTable();
                 data.Fill(table);
-                dataview.RowTemplate.Height = 30;
+                dataview.RowTemplate.Height = 40;
                 dataview.AutoGenerateColumns = false;
                 dataview.DataSource = table;
                 int JumlahSearch = dataview.Rows.Count;
@@ -217,7 +220,7 @@ namespace DataGuru
 
         private void ButtonClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
         }
 
         private void SearchBox_TextChanged(object sender, EventArgs e)
@@ -238,6 +241,21 @@ namespace DataGuru
         private void pictureBox4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Image bkg = Image.FromFile(@"D:\cs\assets\plus-sm.png");
+            Image bk = Image.FromFile(@"D:\cs\assets\trash.png");
+
+            if (button2.Enabled)
+            {
+                button2.BackgroundImage = bkg;
+            }
+            else
+            {
+                button2.BackgroundImage = bk;
+            }
         }
     }
 }
