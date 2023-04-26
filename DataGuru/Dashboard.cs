@@ -6,10 +6,12 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DataGuru
 {
@@ -17,7 +19,12 @@ namespace DataGuru
     {
         Koneksi a = new Koneksi();
         bool drag = false;
-        Point StartPoint = new Point(0,0);
+        Point StartPoint = new Point(0, 0);
+        DataTable dataTable;
+        int pageNumber = 1;
+        int pageSize = 10;
+        int totalData;
+
         public Dashboard()
         {
             InitializeComponent();
@@ -42,7 +49,7 @@ namespace DataGuru
             {
                 MessageBox.Show(ex.Message);
             }
-            
+
         }
         public void Tampil()
         {
@@ -50,18 +57,42 @@ namespace DataGuru
             try
             {
                 conn.Open();
-                SqlDataAdapter data = new SqlDataAdapter("EXEC TampilGuru;", conn);
-                DataTable table = new DataTable();
-                data.Fill(table);
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM tb_guru WHERE is_deleted = 'False'", conn);
+                totalData = Convert.ToInt32(cmd.ExecuteScalar());
+                cmd = new SqlCommand("SELECT * FROM tb_guru WHERE is_deleted = 'False' ORDER BY id OFFSET (@PageNumber - 1) * @PageSize ROWS FETCH NEXT @PageSize ROWS ONLY;", conn);
+                cmd.Parameters.AddWithValue("@PageNumber", pageNumber);
+                cmd.Parameters.AddWithValue("@PageSize", pageSize);
+                SqlDataReader reader = cmd.ExecuteReader();
+                dataTable = new DataTable();
+                dataTable.Load(reader);
                 dataview.RowTemplate.Height = 40;
                 dataview.AutoGenerateColumns = false;
-                dataview.DataSource = table;
+                dataview.DataSource = dataTable;
                 dataview.AdvancedCellBorderStyle.Left = DataGridViewAdvancedCellBorderStyle.None;
                 dataview.AdvancedCellBorderStyle.Right = DataGridViewAdvancedCellBorderStyle.None;
 
+                int TotalHalaman = (int)Math.Ceiling((double)totalData / pageSize);
 
-                SqlCommand cmd = new SqlCommand("SELECT total FROM tb_totalguru;", conn);
-                SqlDataReader dr = cmd.ExecuteReader();
+                ComboBoxPage.Items.Clear();
+                
+
+                for (int i = 1; i <= TotalHalaman; i++)
+                {
+
+                    ComboBoxPage.Items.Add(i.ToString());
+                    
+                    
+
+                }
+                
+
+
+                
+                LabelPage.Text =  " of " + Math.Ceiling((double)totalData / pageSize);
+
+
+                SqlCommand cmdtotal = new SqlCommand("SELECT total FROM tb_totalguru;", conn);
+                SqlDataReader dr = cmdtotal.ExecuteReader();
                 while (dr.Read())
                 {
                     LabelTotal.Text = dr["total"].ToString();
@@ -111,7 +142,7 @@ namespace DataGuru
                 int JumlahSearch = dataview.Rows.Count;
                 LabelTotal.Text = JumlahSearch.ToString();
 
-                if(SearchBox.Text.Length == 0 || SearchBox.Text == " ")
+                if (SearchBox.Text.Length == 0 || SearchBox.Text == " ")
                 {
                     SqlCommand cmd = new SqlCommand("SELECT total FROM tb_totalguru;", conn);
                     SqlDataReader dr = cmd.ExecuteReader();
@@ -161,7 +192,7 @@ namespace DataGuru
                 if (dataview.Columns[e.ColumnIndex].Name == "Update")
                 {
                     DataGridViewRow selectedRow = dataview.Rows[e.RowIndex];
-                    
+
                     UpdateGuru updateForm = new UpdateGuru(selectedRow.Cells["nip"].Value.ToString(),
                                                            selectedRow.Cells["nama"].Value.ToString(),
                                                            selectedRow.Cells["jenis_kelamin"].Value.ToString(),
@@ -209,7 +240,7 @@ namespace DataGuru
             if (drag)
             {
                 Point a = PointToScreen(e.Location);
-                this.Location = new Point (a.X - StartPoint.X, a.Y- StartPoint.Y);
+                this.Location = new Point(a.X - StartPoint.X, a.Y - StartPoint.Y);
             }
         }
 
@@ -230,7 +261,7 @@ namespace DataGuru
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
-           
+
         }
 
         private void panel5_Paint(object sender, PaintEventArgs e)
@@ -243,19 +274,22 @@ namespace DataGuru
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Image bkg = Image.FromFile(@"D:\cs\assets\plus-sm.png");
-            Image bk = Image.FromFile(@"D:\cs\assets\trash.png");
 
-            if (button2.Enabled)
-            {
-                button2.BackgroundImage = bkg;
-            }
-            else
-            {
-                button2.BackgroundImage = bk;
-            }
+
+        private void ComboBoxPage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            pageNumber = ComboBoxPage.SelectedIndex + 1;
+            Tampil();
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void LabelPage_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
